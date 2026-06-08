@@ -1,0 +1,32 @@
+import random
+
+while True:
+
+    emojis= {'r':'🪨', 'p':'📃', 's':'✂️'}
+    choises = ('r','s','p')
+
+    player = input('choose (r/p/s)').lower()
+    if player not in choises:
+        print('Invalid choice ¬_¬')
+        continue
+
+    bot = random.choice(choises)
+
+    print(f'You chose {emojis[player]}')
+    print(f'Computer chose {emojis[bot]}')
+
+    if player == bot:
+        print('Tie!')
+    elif(
+        (player == 'r' and bot == 's') or
+        (player == 's' and bot == 'p') or
+        (player == 'p' and bot == 'r')):
+        print('You win! (≧▽≦)')
+    else:
+        print('You lose ＞﹏＜')
+   
+    wanna_continue = input('Do you wanna continue playing? [Y/N]').capitalize()
+    
+    if wanna_continue == 'N':
+        print('Thanks for playing with me :)')
+        break
